@@ -47,7 +47,7 @@ namespace BlogLab.Repository
 
                 blogComments = await connection.QueryAsync<BlogComment>(
                     "BlogComment_GetAll",
-                    new { BlogId = blogId},
+                    new { BlogId = blogId },
                     commandType: CommandType.StoredProcedure);
             }
 
@@ -81,7 +81,7 @@ namespace BlogLab.Repository
 
             dataTable.Rows.Add(
                 blogCommentCreate.BlogCommentId,
-                blogCommentCreate.ParentBlogCommentId, 
+                blogCommentCreate.ParentBlogCommentId,
                 blogCommentCreate.BlogId,
                 blogCommentCreate.Content);
 
@@ -93,7 +93,8 @@ namespace BlogLab.Repository
 
                 newBlogCommentId = await connection.ExecuteScalarAsync<int?>(
                     "BlogComment_Upsert",
-                    new { 
+                    new
+                    {
                         BlogComment = dataTable.AsTableValuedParameter("dbo.BlogCommentType"),
                         ApplicationUserId = applicationUserId
                     },

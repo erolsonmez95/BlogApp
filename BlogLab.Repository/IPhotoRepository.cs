@@ -12,7 +12,7 @@ namespace BlogLab.Repository
 
         public Task<Photo> GetAsync(int photoId);
 
-        public Task<List<Photo>> GetAllByUserIdAsync (int applicationUserId);
+        public Task<List<Photo>> GetAllByUserIdAsync(int applicationUserId);
 
         public Task<int> DeletetAsync(int photoId);
     }

@@ -46,10 +46,11 @@ namespace BlogLab.Repository
                 await connection.OpenAsync();
 
                 using (var multi = await connection.QueryMultipleAsync("Blog_GetAll",
-                    new { 
+                    new
+                    {
                         Offset = (blogPaging.Page - 1) * blogPaging.PageSize,
                         PageSize = blogPaging.PageSize
-                    }, 
+                    },
                     commandType: CommandType.StoredProcedure))
                 {
                     results.Items = multi.Read<Blog>();

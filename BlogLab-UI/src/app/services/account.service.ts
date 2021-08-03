@@ -32,6 +32,11 @@ export class AccountService {
     );
   }
 
+  public get currentUserValue():ApplicationUser{
+    return this.currentUserSubject$.value;
+  }
+
+
   setCurrentUser(user: ApplicationUser) {
     this.currentUserSubject$.next(user);
   }

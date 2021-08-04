@@ -20,6 +20,11 @@ export class AccountService {
     );
   }
 
+  public isLoggedIn(){
+    const currentUser= this.currentUserValue;
+    const isLoggedIn= currentUser && currentUser.token;
+    return isLoggedIn;
+  }
   login(model: ApplicationUserLogin): Observable<ApplicationUser> {
     return this.http.post(`${environment.webApi}/Account/login`, model).pipe(
       map((user: ApplicationUser) => {

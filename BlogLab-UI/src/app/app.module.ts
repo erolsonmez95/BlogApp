@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown'
 import {CollapseModule} from 'ngx-bootstrap/collapse'
+import {TypeaheadModule} from 'ngx-bootstrap/typeahead'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -61,7 +62,8 @@ import { RegisterComponent } from './componets/register/register.component';
       positionClass: 'toast-bottom-right'
     }),
     BsDropdownModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    TypeaheadModule.forRoot()
   ],
   providers: [
     HttpClient,

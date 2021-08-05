@@ -7,7 +7,7 @@ import {BsDropdownModule} from 'ngx-bootstrap/dropdown'
 import {CollapseModule} from 'ngx-bootstrap/collapse'
 import {TypeaheadModule} from 'ngx-bootstrap/typeahead'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import {ToastrModule} from 'ngx-toastr'
 import { AppRoutingModule } from './app-routing.module';
@@ -63,7 +63,8 @@ import { RegisterComponent } from './componets/register/register.component';
     }),
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
-    TypeaheadModule.forRoot()
+    TypeaheadModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [
     HttpClient,

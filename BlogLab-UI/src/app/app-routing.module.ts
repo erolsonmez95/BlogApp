@@ -8,17 +8,18 @@ import { HomeComponent } from './componets/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { BlogsComponent } from './componets/blog-components/blogs/blogs.component';
 
 const routes: Routes = [
-  {path: '', component:HomeComponent},
-  {path:'login',component:LoginComponent},
-  {path:'blogs',component:BlogComponent},
-  {path:'blogs/:id',component:BlogComponent},
-  {path:'photo-album',component:PhotoAlbumComponent, canActivate:[AuthGuard]},
-  {path:'dashboard',component:DashboardComponent, canActivate:[AuthGuard]},
-  {path:'dashboard/:id',component:BlogEditComponent, canActivate:[AuthGuard]},
-  {path:'not-found',component:NotFoundComponent},
-  {path:'**',redirectTo:'/not-found'}
+  {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'blogs', component: BlogsComponent},
+  {path: 'blogs/:id', component: BlogComponent},
+  {path: 'photo-album', component: PhotoAlbumComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard/:id', component: BlogEditComponent, canActivate: [AuthGuard]},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: '/not-found'}
  
 
 ];
